@@ -26,7 +26,7 @@ The result json should be (on s3 object)
 Some notes: 
   - Caching should be disabled on the s3 object
   - The server code is just a boilerplate code, feel free to remove it
-  - The server code can be written in every language you wish (that can run on linux) 
+  - The server code can be written in any language you wish (that can run on linux) 
   - You need some DB on your side, we use mongodb
   - We want to be able the structure of your application and decisions you take. 
   - You should forget about security in this question 
