@@ -30,4 +30,4 @@ Some notes:
   - You need some DB on your side, we use mongodb
   - We want to be able the structure of your application and decisions you take. 
   - You should forget about security in this question 
-  - For any question please contact eyal, if you got this question you should know how
+  - For any question please contact eyal, if you got this question you should know how to do it
