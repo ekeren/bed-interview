@@ -13,7 +13,7 @@ A change in the model should upload new content to s3 bucket bed.interview.rollo
 Here is the story of the application:
   1. The client side CRUD the models and send the server via REST api
   2. On every change the server need to put a json objects on AWS s3 bed.interview.rollout.io/&lt;your_name_here&gt;
-  3. The json object should be an an array of a list of the models which `model.status=="production"` with a bit of change in the actual content, the only fields that should be available are `name` and `value`
+  3. The json object shouldbe a list of the models which satisfy `model.status=="production"` with a bit of change in the actual content, the only fields that should be available are `name` and `value`
     - if `model.type==="normal"` `value` should be `normal_value`
     - if `model.type==="weird"` `value` should be `weird_value`
 
