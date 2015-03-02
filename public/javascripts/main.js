@@ -1,6 +1,7 @@
 $(document).ready(function(){
   var tempalte = function(json){
     return "" + 
+      "<span class='delete'>X</span>|" +  
       "<span class='name'>" + json.name + "</span>|" +  
       "<span class='status'>" + json.status + "</span>|" +  
       "<span class='type'>" + json.type + "</span>|" +  
@@ -20,6 +21,9 @@ $(document).ready(function(){
       this.listenTo(this.model, "change", this.render);
     },
     events: {
+      "click .delete": function(){
+        this.model.collection.remove(this.model);
+      },
       "click .name":function(){
         this.model.save({
           name: this.model.get("name") + "."
@@ -52,9 +56,9 @@ $(document).ready(function(){
     return Math.floor((Math.random() * 10) + 1);
   };
   collection.fetch().done(renderCollections);
-  collection.on("add", renderCollections);
+  collection.on("add remove", renderCollections);
   $(".new").click(function(){
-    var m = collection.add({ name:"new model", status:"production", type:"normal", normal_value:random() , wierd_value: random()  }); 
+    var m = collection.add({  status:"production", type:"normal", normal_value:random() , wierd_value: random()  }); 
     m.save();
   });
 });

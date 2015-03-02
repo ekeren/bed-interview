@@ -1,4 +1,5 @@
 var express = require('express');
+var _ = require('lodash');
 var router = express.Router();
 var m1 = { _id:"1", name:"name 1", status:"disable", type:"normal", normal_value:1, wierd_value:1};
 var m2 = { _id:"2", name:"name 2", status:"production", type:"wierd", normal_value:2, wierd_value:2};
@@ -11,7 +12,7 @@ var idToObject = function(id){
   }
   return null;
 };
-var modelsIdCounter = 4;;
+var modelsIdCounter = 3;
 
 router.get('/api/models', function(req, res){
   res.send(models); 
@@ -27,10 +28,18 @@ router.put('/api/models/:id', function(req, res){
 
 router.post('/api/models', function(req, res){
   var model = req.body;
-  model._id = "" + modelsIdCounter++;
+  var id = ++modelsIdCounter;
+  model._id = "" + id;
+  model.name = "name " + id; 
   models.push(model);
+  res.send(model);
 });
 
+router.delete('/api/models/:id', function(req, res){
+  var m = idToObject(req.params.id);
+  models = _.remove(models, m);
+  res.send(m); 
+});
 router.get('/api/models/:id', function(req, res){
   res.send(idToObject(req.params.id)); 
 });
