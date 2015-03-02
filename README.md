@@ -28,6 +28,5 @@ Some notes:
   - The server code is just a boilerplate code, feel free to remove it
   - The server code can be written in any language you wish (that can run on linux) 
   - You need some DB on your side, we use mongodb
-  - We want to be able the structure of your application and decisions you take. 
   - You should forget about security in this question 
   - For any question please contact eyal, if you got this question you should know how to do it
