@@ -10,6 +10,7 @@ $(document).ready(function(){
   };
   var Model = Backbone.Model.extend({ 
     idAttribute: "_id",
+    urlRoot: "/api/models"
   });
   var Collection = Backbone.Collection.extend({
       model: Model,
@@ -23,6 +24,7 @@ $(document).ready(function(){
     events: {
       "click .delete": function(){
         this.model.collection.remove(this.model);
+        this.model.destroy();
       },
       "click .name":function(){
         this.model.save({

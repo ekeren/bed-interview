@@ -37,7 +37,7 @@ router.post('/api/models', function(req, res){
 
 router.delete('/api/models/:id', function(req, res){
   var m = idToObject(req.params.id);
-  models = _.remove(models, m);
+  _.remove(models, m);
   res.send(m); 
 });
 router.get('/api/models/:id', function(req, res){
