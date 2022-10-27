@@ -9,3 +9,10 @@
 
 - [ ] check this out
 - [ ] and this also
+
+{% note %}
+
+**Note:** Owners and administrators can add outside collaborators to a repository.
+
+{% endnote %}
+
